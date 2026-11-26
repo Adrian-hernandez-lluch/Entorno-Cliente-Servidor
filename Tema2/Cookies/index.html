@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies crear y borrar</title>
+</head>
+<body>
+<button id="btnCrear">Crear Cookie</button>
+<button id="btnBorrar">Borrar Cookie</button>
+<button id="btnLeer">Leer Cookie</button>
+<script>
+    const btnCrear = document.getElementById('btnCrear')
+    const btnBorrar = document.getElementById('btnBorrar')
+    const btnLeer = document.getElementById('btnLeer')
+
+    btnCrear.addEventListener("click",crearCookie);
+    btnBorrar.addEventListener("click",borrarCookie);
+    btnLeer.addEventListener("click",LeerCookie);
+
+    function crearCookie() {
+        let fechaCaducidad=new Date();
+        fechaCaducidad.setTime(fechaCaducidad.getTime()+(30*24*60*60*1000));
+        document.cookie="usuario=Dimas; expires" + fechaCaducidad.toUTCString();
+
+        document.cookie=nombre+"="+valorCodificado+"; expires"+fechaCaducidad+"; path=/;";
+
+        //creamos cookie con max-age
+        var maxAge=30*24*60*60*1000;
+        var nombre="tema"
+        var valor="oscuro"
+        var valorCodificado=encodeURIComponent(valor);
+        document.cookie= nombre+"="+valorCodificado+"; max-age"+maxAge+"; path=/;";
+
+        document.getElementById("mensaje").innerHTML="Cookie'Tema'Creada";
+    }
+    function borrarCookie() {
+        //borrar cookie establecida maxe-age=0
+        document.cookie="tema=; max-age=0; path=/;";
+        document.cookie="tema=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+        document.getElementById("mensaje").innerHTML="Cookie'Tema'Borrada";
+    }
+
+    function LeerCookie() {
+        if (document.cookie){
+            alert(document.cookie)
+        }
+    }
+</script>
+</body>
+</html>

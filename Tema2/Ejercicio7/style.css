@@ -1,0 +1,12 @@
+.parrafoMalo{
+    color: red;
+}
+.parrafoBueno{
+    color: green;
+}
+.borde{
+    border:2px solid blue;
+}
+.bordeOriginal{
+    border: 1px solid black;
+}

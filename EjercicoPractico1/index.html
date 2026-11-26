@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Práctico 1</title>
+</head>
+<body>
+<h3 id="pregunta">Pregunta 1: ¿Que es el DOM?</h3>
+<div id="respuesta">The Document Object Model (DOM) is a programming interface that represents the structure of a document (such as HTML, XML, or SVG) as a logical tree in memory. Each branch of this tree ends in a node, and each node represents an object — for example, an HTML element, an attribute, or a piece of text.</div>
+<script>
+
+    const p1=document.getElementById("pregunta");
+
+    p1.addEventListener('click',mostrarRespuesta);
+
+    function mostrarRespuesta() {
+        var respuesta=document.getElementById("respuesta");
+        respuesta.classList.toggle("aparecer");
+    }
+
+</script>
+
+</body>
+</html>

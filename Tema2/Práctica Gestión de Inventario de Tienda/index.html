@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica: Gestión de Inventario de Tienda</title>
+</head>
+<body>
+<h2>Gestión de Inventario de Tienda</h2>
+<input type="text" id="nombre" placeholder="Añadir Nombre">
+<select id="categoria">
+    <option value="" disabled selected>Elige una categoría</option>
+    <option value="Electrónica">Electrónica</option>
+    <option value="Hogar">Hogar</option>
+    <option value="Alimentación">Alimentación</option>
+</select>
+<input type="number" id="precio" placeholder="Añadir Precio">
+<button id="btn-anadir">Añadir Producto</button>
+<hr>
+<button id="btn-eliminar-ultimo">Eliminar Último Producto</button>
+<hr>
+<input type="text" id="eliminar-porNombre" placeholder="Eliminar por Nombre">
+<button id="btn-eliminar-porNombre">Eliminar Producto por Nombre</button>
+<hr>
+<input type="text" id="Filtrar-Por-Precio" placeholder="Introduce un precio">
+<button id="btnFiltrar-Por-Precio">Filtrar por Precio</button>
+<button id="btnLimpiarFiltro">LimpiarFiltro</button>
+<hr>
+<select id="FiltrarCategoria">
+    <option value="" disabled selected>Elige una categoría</option>
+    <option value="Electrónica">Electrónica</option>
+    <option value="Hogar">Hogar</option>
+    <option value="Alimentación">Alimentación</option>
+</select>
+<button id="btnFiltrarPorCategoria">Filtrar por Categoria</button>
+<button id="btnLimpiarFiltro2">LimpiarFiltro</button>
+<hr>
+<h3>Inventario de la Tienda:</h3>
+<ul id="lista-tareas"></ul>
+<hr>
+<h3>Valor Total del Inventario</h3>
+<p id="valor-total"></p>
+
+
+<script src="index.js"></script>
+</body>
+</html>

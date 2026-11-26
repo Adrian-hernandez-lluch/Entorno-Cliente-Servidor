@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+
+<h1>Biblioteca</h1>
+
+<h2>Añadir libro</h2>
+<form id="formLibro">
+    <label>Título: <input type="text" id="titulo" required></label><br>
+    <label>Autor: <input type="text" id="autor" required></label><br>
+    <label>Año: <input type="number" id="anio" required></label><br>
+    <label>Género: <input type="text" id="genero" required></label><br>
+    <button type="button" id="botonAnyadir">Añadir libro</button>
+</form>
+
+<h2>Eliminar libro</h2>
+<label>Título: <input type="text" id="tituloEliminar"></label>
+<button type="button" id="botonEliminar">Eliminar</button>
+
+<h2>Buscar libro</h2>
+<label>Título: <input type="text" id="tituloBuscar"></label>
+<button type="button" id="botonBuscar">Buscar</button>
+
+<h2>Edad Media</h2>
+<button type="button" id="botonMedia">Buscar</button>
+
+
+<h2>Libros</h2>
+<button type="button" id="botonMostrarLista">Mostrar lista de libros</button>
+<ul id="listaBiblioteca"></ul>
+
+<script src="libro.js"></script>
+</body>
+</html>

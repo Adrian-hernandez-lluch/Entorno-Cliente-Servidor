@@ -1,0 +1,9 @@
+#respuesta {
+    display: none;
+}
+#respuesta.aparecer {
+    display: block;
+}
+#pregunta {
+    cursor: pointer;
+}

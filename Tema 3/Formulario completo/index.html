@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de inscripción</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 30px 15px;
+            color: #333;
+        }
+
+        #mensajeError {
+            color: #c0392b;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .opcion {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        select[multiple] { height: 120px; }
+
+        textarea { resize: vertical; }
+
+        .ayuda {
+            font-size: 12px;
+            color: #777;
+            margin-top: -8px;
+            margin-bottom: 12px;
+        }
+
+        .error {
+            color: #c0392b;
+            font-size: 13px;
+            display: none;
+        }
+
+        .botones {
+            text-align: center;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        button:hover { background-color: #1a252f; }
+
+        button[type="reset"] { background-color: #95a5a6; }
+        button[type="reset"]:hover { background-color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+<form id="formulario" action="#" method="post">
+    <h1>Inscripción a cursos</h1>
+
+    <!-- DATOS PERSONALES -->
+    <fieldset>
+        <legend>Datos personales</legend>
+
+        <label for="nombre">Nombre completo *</label>
+        <input type="text" id="nombre" name="nombre" >
+
+        <label for="email">Correo electrónico *</label>
+        <input type="text" id="email" name="email" >
+    </fieldset>
+
+    <!-- RADIO -->
+    <fieldset>
+        <legend>Modalidad *</legend>
+        <span class="opcion">
+                <input type="radio" id="presencial" name="modalidad" value="presencial" >
+                <label for="presencial" style="display:inline">Presencial</label>
+            </span>
+        <span class="opcion">
+                <input type="radio" id="online" name="modalidad" value="online">
+                <label for="online" style="display:inline">Online</label>
+            </span>
+        <span class="opcion">
+                <input type="radio" id="semipresencial" name="modalidad" value="semipresencial">
+                <label for="semipresencial" style="display:inline">Semipresencial</label>
+            </span>
+    </fieldset>
+
+    <!-- CHECKBOX MÚLTIPLE -->
+    <fieldset>
+        <legend>Turnos disponibles (elige al menos uno) *</legend>
+        <span class="opcion">
+                <input type="checkbox" id="manana" name="turnos[]" value="manana">
+                <label for="manana" style="display:inline">Mañana</label>
+            </span>
+        <span class="opcion">
+                <input type="checkbox" id="tarde" name="turnos[]" value="tarde">
+                <label for="tarde" style="display:inline">Tarde</label>
+            </span>
+        <span class="opcion">
+                <input type="checkbox" id="noche" name="turnos[]" value="noche">
+                <label for="noche" style="display:inline">Noche</label>
+            </span>
+        <span class="opcion">
+                <input type="checkbox" id="finde" name="turnos[]" value="fin_de_semana">
+                <label for="finde" style="display:inline">Fin de semana</label>
+            </span>
+        <p class="error" id="errorTurnos">Debes seleccionar al menos un turno.</p>
+    </fieldset>
+
+    <!-- SELECT MÚLTIPLE -->
+    <fieldset>
+        <legend>Cursos de interés *</legend>
+        <label for="cursos">Selecciona uno o varios cursos:</label>
+        <select id="cursos" name="cursos[]" multiple >
+            <option value="html">HTML y CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="sql">Bases de datos SQL</option>
+            <option value="spring">Spring Boot</option>
+        </select>
+        <p class="ayuda">Mantén pulsado Ctrl (o Cmd en Mac) para seleccionar varios.</p>
+    </fieldset>
+
+    <!-- TEXTAREA -->
+    <fieldset>
+        <legend>Comentarios</legend>
+        <label for="comentarios">Cuéntanos por qué te interesa el curso *</label>
+        <textarea id="comentarios" name="comentarios" rows="5" maxlength="500"
+                  placeholder="Escribe aquí tus comentarios..." ></textarea>
+    </fieldset>
+
+    <!-- CHECKBOX SIMPLE -->
+    <fieldset>
+        <legend>Condiciones</legend>
+        <input type="checkbox" id="condiciones" name="condiciones" value="acepto" >
+        <label for="condiciones" style="display:inline">Acepto la política de privacidad *</label>
+        <br><br>
+        <input type="checkbox" id="newsletter" name="newsletter" value="si">
+        <label for="newsletter" style="display:inline">Quiero recibir novedades por correo</label>
+    </fieldset>
+
+    <p id="mensajeError"></p>
+
+    <div class="botones">
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </div>
+</form>
+
+<script src="index.js"></script>
+
+</body>
+</html>
