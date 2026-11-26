@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Examen DWEC 1ª Evaluación</title>
+</head>
+<body>
+
+<h1>Información de ciudades</h1>
+
+<form id="formCiudades">
+
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad" placeholder="Nombre de la ciudad">
+    <br>
+    <label for="cp"> Código Postal:</label>
+    <input type="text" id="cp" name="cp" placeholder="Código postal">
+    <br>
+    <label for="habitantes"> Habitantes:</label>
+    <input type="text" id="habitantes" name="habitantes" placeholder="Número de habitantes">
+    <br>
+    <label for="InputfiltroHabitantes"> Filtrar por habitantes:</label>
+    <input type="text" id="InputfiltroHabitantes" name="InputfiltroHabitantes" placeholder="número buscado">
+    <button id="filtroHabitantes">Filtro</button>
+    <p id="error"></p>
+
+    <button type="submit">Añadir Ciudad</button>
+</form>
+<h2>Listado de ciudades:</h2>
+<ul id="listaCiudades"></ul>
+<div id="estadísticas"></div>
+<script src="index.js">
+</script>
+</body>
+</html>
